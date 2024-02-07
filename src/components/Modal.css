@@ -1,0 +1,76 @@
+.Modal{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Modal .container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    background-color: #ccc;
+    border-radius:24px;    
+    max-width: 100%;
+    min-height:200px;
+    position: relative;
+}
+
+.Modal .container .xbutton{
+    position: absolute;
+    right: 8px;
+    top: -36px;
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+}
+
+.Modal form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap:4px;
+    margin: 10px 0px;
+}
+
+.Modal input{
+    padding: 4px;
+    font-size: 1rem;
+    min-width: 300px;
+    margin-bottom: 12px;
+}
+
+.Modal select{
+    min-width: 300px;
+    padding: 4px;
+    font-size: 1rem;
+}
+
+.controller{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.controller button{
+    padding: 12px;
+    min-width: 120px;
+    border-radius: 12px;
+}
+
+.accept-button{
+    border: 2px solid white;
+    background-color: rgb(100, 149, 237);
+    box-shadow: 2px 2px rgba(100, 149, 237, .2);
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 600;
+}

@@ -1,0 +1,74 @@
+.task{
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    gap:8px;
+    align-items: center;
+}
+
+.task > div{
+    flex-grow: 0;
+}
+
+.task .task-middle{
+    flex-grow: 1;    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap:4px;
+}
+
+.task .check-button{
+    width: 30px;
+    height: 30px;
+    border: 1px solid purple;
+    border-radius: 15%;
+    box-shadow: 2px 2px rgba(128,0,128,0.2);
+}
+
+.task .check-button svg{
+    font-size: 28px;
+    display: none;
+    color: white;
+    margin-left: 3px;
+}
+
+.task.marked .check-button{
+    background-color: purple;
+}
+
+.task.marked .check-button svg{
+    display: flex;
+}
+
+.task .tail-button{
+    width: 40px;
+    height: 40px;
+    background-color: #ecedf6;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px rgba(0,0,0,0.2);
+}
+
+.marked .task-title{
+    text-decoration: line-through;
+    color:#666;
+}
+
+.task-title{
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.task-date{
+    font-size: 0.8rem;
+}
+
+button{
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
