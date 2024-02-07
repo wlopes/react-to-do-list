@@ -12,16 +12,16 @@ function App() {
     if(storageLoaded){      
       localStorage.setItem('tasks', JSON.stringify(tasks));
     }
-  },[tasks])
+  },[tasks, storageLoaded])
 
   useEffect(()=>{
     let data = JSON.parse(localStorage.getItem('tasks'))
     let tasks = {}
     Object.keys(data).forEach((k) => {
       tasks[k] = {...data[k], createdAt:moment(data[k].createdAt)}
-    })    
-    setStorageLoaded(true)
+    })        
     setTasks(tasks)
+    setStorageLoaded(true)
   },[])
 
   return (
