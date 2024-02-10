@@ -43,3 +43,16 @@ main{
     gap:10px;
 }
 
+.header-right{
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    gap:6px;
+    position: relative;
+}
+
+.menu-button{
+    padding: 10px;
+    min-width: 32px;
+    border-radius: 2px;
+}

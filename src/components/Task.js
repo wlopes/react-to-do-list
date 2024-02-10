@@ -27,7 +27,7 @@ const Task = ({task, index}) => {
     } 
 
     return (
-    <div className={`task ${task.completed ? ' marked' : ''}`}>
+    <div className={`task${task.completed ? ' marked' : ''}`}>
         <div className='check-button' onClick={handleCheckClick}>
             <FontAwesomeIcon icon={faCheck} />
         </div>

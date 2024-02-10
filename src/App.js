@@ -8,6 +8,14 @@ function App() {
   const [tasks, setTasks] = useState({}    )
   const [storageLoaded, setStorageLoaded] = useState(false)  
 
+  const convertDataToTasks = (data)=>{
+    let r = {}
+    Object.keys(data).forEach((k) => {
+      r[k] = {...data[k], createdAt:moment(data[k].createdAt)}
+    })
+    return r;
+  }
+
   useEffect(()=>{
     if(storageLoaded){      
       localStorage.setItem('tasks', JSON.stringify(tasks));
@@ -15,23 +23,19 @@ function App() {
   },[tasks, storageLoaded])
 
   useEffect(()=>{
-    let data = JSON.parse(localStorage.getItem('tasks'))
-    let tasks = {}
-    if(data){
-      Object.keys(data).forEach((k) => {
-        tasks[k] = {...data[k], createdAt:moment(data[k].createdAt)}
-      })        
-      setTasks(tasks)
+    let data = JSON.parse(localStorage.getItem('tasks'))    
+    if(data){      
+      setTasks(convertDataToTasks(data))
       setStorageLoaded(true)
     }    
   },[])
 
   return (
-    <TaskContext.Provider value={{tasks:tasks, setTasks:setTasks}}>
+    <TaskContext.Provider value={{tasks:tasks, setTasks:setTasks, convertDataToTasks}}>
       <div className="App">
         <h1 className="App-Title">My To Do List</h1>
         <Main />        
-        <footer>developed by wlopes404 v0.1.0</footer>        
+        <footer>developed by wlopes404 v0.2.0</footer>        
       </div>
     </TaskContext.Provider>    
   );
