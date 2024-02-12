@@ -25,7 +25,7 @@ function App() {
 
   useEffect(()=>{
     let data = JSON.parse(localStorage.getItem('tasks'))    
-    console.log(tasks)
+    console.log(data)
     if(data){      
       setTasks(convertDataToTasks(data))
       setStorageLoaded(true)
