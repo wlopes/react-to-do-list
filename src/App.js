@@ -18,18 +18,16 @@ function App() {
 
   useEffect(()=>{
     if(storageLoaded){      
-      localStorage.setItem('tasks', JSON.stringify(tasks));
-      console.log('saved')
+      localStorage.setItem('tasks', JSON.stringify(tasks));      
     }
   },[tasks, storageLoaded])
 
   useEffect(()=>{
-    let data = JSON.parse(localStorage.getItem('tasks'))    
-    console.log(data)
+    let data = JSON.parse(localStorage.getItem('tasks'))        
     if(data){      
-      setTasks(convertDataToTasks(data))
-      setStorageLoaded(true)
-    }    
+      setTasks(convertDataToTasks(data))      
+    }
+    setStorageLoaded(true)    
   },[])
 
   return (
