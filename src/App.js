@@ -19,11 +19,13 @@ function App() {
   useEffect(()=>{
     if(storageLoaded){      
       localStorage.setItem('tasks', JSON.stringify(tasks));
+      console.log('saved')
     }
   },[tasks, storageLoaded])
 
   useEffect(()=>{
     let data = JSON.parse(localStorage.getItem('tasks'))    
+    console.log(tasks)
     if(data){      
       setTasks(convertDataToTasks(data))
       setStorageLoaded(true)
