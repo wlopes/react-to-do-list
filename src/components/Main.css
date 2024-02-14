@@ -56,3 +56,9 @@ main{
     min-width: 32px;
     border-radius: 2px;
 }
+
+@media screen and (max-width: 719px){
+    .add-task-button{
+        font-size: 0.75rem;
+    }
+}

@@ -35,12 +35,13 @@ const Task = ({task, index}) => {
             <span className="task-title">{task.name}</span>
             <span className="task-date">{task.createdAt.format('dddd[,] DD/MM/YYYY ')}</span>
         </div>
-        <button className='tail-button' onClick={handleTrashClick}>
+        <button className='tail-button edit' onClick={handleEditClick}>
+            <FontAwesomeIcon icon={faEdit} />
+        </button>        
+        <button className='tail-button delete' onClick={handleTrashClick}>
             <FontAwesomeIcon icon={faTrash} />
         </button>
-        <button className='tail-button' onClick={handleEditClick}>
-            <FontAwesomeIcon icon={faEdit} />
-        </button>
+        
         <Modal task={task} isOpen={modalIsOpen} setModalIsOpen={setModalIsOpen}/>
     </div>
   )

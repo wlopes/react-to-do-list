@@ -35,7 +35,7 @@ function App() {
       <div className="App">
         <h1 className="App-Title">My To Do List</h1>
         <Main />        
-        <footer>developed by wlopes404 v0.2.0</footer>        
+        <footer>developed by wlopes404 v0.2.1</footer>        
       </div>
     </TaskContext.Provider>    
   );

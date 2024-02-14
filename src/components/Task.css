@@ -9,10 +9,12 @@
 
 .task > div{
     flex-grow: 0;
+    flex-shrink: 0;
 }
 
 .task .task-middle{
-    flex-grow: 1;    
+    flex-grow: 1;
+    flex-shrink: 1;    
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -50,7 +52,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 2px 2px rgba(0,0,0,0.2);
+    box-shadow: 2px 2px rgba(0,0,0,0.2);    
+    flex-shrink: 0;
 }
 
 .marked .task-title{
@@ -87,8 +90,26 @@ button{
     font-size: 1rem;
     background-color: #333;
     color: #ecedf6;
+    text-wrap: nowrap;
 }
 
 .menu button:hover{
     background-color: #555;
+}
+
+@media screen and (max-width: 719px){
+    .task{
+        display: grid;
+        grid-template-columns: 40px 1fr 40px 40px;
+    }
+    .task-middle{
+        grid-column: 2/5;
+        text-align: left;
+    }
+    .tail-button.edit{
+        grid-column: 3;
+    }
+    .tail-button.delete{
+        grid-column: 4;
+    }
 }
